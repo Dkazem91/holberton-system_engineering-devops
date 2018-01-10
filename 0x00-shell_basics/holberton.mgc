@@ -1,2 +1,3 @@
 #!/bin/bash
-0 s "HOLBERTON"
+0 string HOLBERTON
+
