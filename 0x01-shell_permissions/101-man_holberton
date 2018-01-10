@@ -10,8 +10,8 @@ Holberton School is a project-based alternative to college for the next generati
 .B holberton
 does not take any options. However, you can supply studentname.
 .SH SEE ALSO
-.I peerlearning(2), projectbased(2), fullstack(2), Betty(1) 
+.I peerlearning(2), projectbased(2), fullstack(2), Betty(1)
 .SH BUGS
 No known bugs.
 .SH AUTHOR
-Julien Barbier, Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Gautier, and all the Holberton mentors  
+Julien Barbier, Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Gautier, and all the Holberton mentors
