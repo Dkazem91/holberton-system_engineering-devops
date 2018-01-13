@@ -1,0 +1,2 @@
+#!/bin/bash
+find . -type f -name "*.gif" | cut -d "/" -f 2 | cut -d "." -f 1
