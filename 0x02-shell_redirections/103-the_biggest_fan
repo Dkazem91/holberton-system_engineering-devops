@@ -1,2 +1,2 @@
 #!/bin/bash
-cut -f 1 | uniq -cd | sort -nr | head | cut -c 9-
+cut -f 1 | tr -d " " | sort | uniq -c | sort -nr | head | cut -c 9-
