@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -empty | tr -d ./
+find . -empty | cut -d '/' -f 2

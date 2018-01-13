@@ -1,2 +1,2 @@
 #!/bin/bash
-sed -r 'y/Ac/Ze/'
+tr 'Ac' 'Ze'
