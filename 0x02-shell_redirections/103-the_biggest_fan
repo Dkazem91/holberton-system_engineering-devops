@@ -1,2 +1,2 @@
 #!/bin/bash
-sort -nk 7 | cut -f 1 | head
+cut -f 1 | uniq -cd | sort -nr | head | cut -c 9-
