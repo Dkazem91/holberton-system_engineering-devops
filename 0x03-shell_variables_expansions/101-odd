@@ -1,2 +1,2 @@
 #!/bin/bash
-cat -n | cut -c6- | grep -v [02468] | cut -f2
+cat -n | cut -c6- | grep -vP "[02468]\t" | cut -f2
