@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+name=holbertonschool
+if [ -e $name ]; then
+    echo "holbertonschool file exists"
+else
+    echo "holbertonschool file does not exist"
+    exit 1
+fi
+if [ ! -s $name ]; then
+    echo "holbertonschool file is empty"
+else
+    echo "holbertonschool file is not empty"
+fi
+if [ -f $name ]; then
+    echo "holbertonschool is a regular file"
+fi
