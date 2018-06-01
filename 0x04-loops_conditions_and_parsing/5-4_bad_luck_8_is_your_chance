@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+count=1
+while [ $count -ne 10 ]
+do
+    if [ $count -eq 4 ]; then
+	echo "bad luck"
+    elif [ $count -eq 8 ]; then
+	echo "good luck"
+    else
+	echo "Holberton School"
+    fi
+    ((count++))
+done
