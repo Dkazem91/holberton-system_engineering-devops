@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+while read name
+do
+    echo "$name" | cut -d":" -f1,3,6
+done < /etc/passwd
