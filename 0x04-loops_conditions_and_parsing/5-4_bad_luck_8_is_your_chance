@@ -2,7 +2,7 @@
 #more while if stuff
 
 count=1
-while [ $count -ne 10 ]
+while [ $count -ne 11 ]
 do
     if [ $count -eq 4 ]; then
 	echo "bad luck"
