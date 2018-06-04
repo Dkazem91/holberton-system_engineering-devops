@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a lot of extra traps
+trap "echo 'I hate the kill command';sudo rm /var/run/holbertonscript.pid; exit;" SIGTERM
+trap "sudo rm /var/run/holbertonscript.pid; exit;" SIGQUIT
+trap "echo 'Y U no love me?!'" SIGINT
+sudo bash -c 'echo "$$" > /var/run/holbertonscript.pid'
+while ((1))
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
