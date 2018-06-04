@@ -1,9 +1,19 @@
 #!/usr/bin/env bash
 # a lot of extra traps
-trap "echo 'I hate the kill command';sudo rm /var/run/holbertonscript.pid; exit;" SIGTERM
-trap "sudo rm /var/run/holbertonscript.pid; exit;" SIGQUIT
+file=/var/run/holbertonscript.pid
+function finishQuit {
+    sudo rm $file
+    exit
+}
+function finishTerm {
+    echo 'I hate the kill command'
+    sudo rm $file
+    exit
+}
+trap finishTerm SIGTERM
+trap finishQuit SIGQUIT
 trap "echo 'Y U no love me?!'" SIGINT
-sudo bash -c 'echo "$$" > /var/run/holbertonscript.pid'
+sudo bash -c "echo $$ > $file"
 while ((1))
 do
     echo "To infinity and beyond"
