@@ -26,7 +26,7 @@ int main(void)
 	for (i = 0; i < 5; i++)
 	{
 		child = fork();
-		if (!(child))
+		if (child == 0)
 		{
 			printf("Zombie process created, PID: %d\n", getpid());
 			exit(1);
