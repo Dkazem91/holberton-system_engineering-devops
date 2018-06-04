@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#while case stuff
+
 count=1
 while [ $count -ne 21 ]
 do

@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
+#first exercise
+
 END=10
 for _ in $(seq 1 $END); do echo "Holberton School";done

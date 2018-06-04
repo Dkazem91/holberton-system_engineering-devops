@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#using ls as a variable stuff
+
 list=$(ls)
 for i in $list
 do

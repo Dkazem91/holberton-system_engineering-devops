@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#until loop
+
 count=0
 until [ $count -eq 10 ]
 do

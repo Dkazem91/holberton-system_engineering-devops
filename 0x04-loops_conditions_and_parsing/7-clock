@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#nested loop stuff
+
 hours=0
 minutes=1
 while [ $hours -ne 13 ]

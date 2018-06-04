@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#more while if stuff
+
 count=1
 while [ $count -ne 10 ]
 do

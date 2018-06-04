@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#read and cut stuff
+
 while read name
 do
     echo "$name" | cut -d":" -f1,3,6

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#fizzbuzz stuf
+
 count=1
 while [ $count -ne 101 ]
 do

@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+#while if stuff
+
 count=0
 while [ $count -ne 11 ]
 do
