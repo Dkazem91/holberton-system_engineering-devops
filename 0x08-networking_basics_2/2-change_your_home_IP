@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+facebook='8.8.8.8 facebook'
+hosts=/etc/hosts
+sudo bash -c "sudo echo $facebook >> $hosts"
+sudo bash -c "sed -i -e 's/^127.*$ localhost/127.0.0.2 localhost/g' $hosts"
