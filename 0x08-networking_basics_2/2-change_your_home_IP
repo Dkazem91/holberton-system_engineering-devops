@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#changes the IP
 facebook='8.8.8.8 facebook'
 hosts=/etc/hosts
 sudo bash -c "sudo echo $facebook >> $hosts"
