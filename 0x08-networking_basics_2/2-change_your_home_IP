@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 #changes the IP
-facebook='8.8.8.8 facebook'
+facebook='8.8.8.8 facebook.com'
 hosts=/etc/hosts
-sudo bash -c "sudo echo $facebook >> $hosts"
-sudo bash -c "sed -i -e 's/^127.*$ localhost/127.0.0.2 localhost/g' $hosts"
+cp hosts ~/hosts.new
+echo $facebook >> $hosts
+sed -i -e s/^127.*$/127.0.0.2/ ~/hosts.new
+cp -f ~/hosts.new /etc/hosts
