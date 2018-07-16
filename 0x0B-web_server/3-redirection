@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 #installs nginx and redirects to holberton school string
-sudo apt-get update
+sudo apt-get -y update
 sudo apt-get -y install nginx
+file1=/usr/share/nginx/html/index.html
+sudo bash -c "echo 'Holberton School ftw!' > $file1"
 file=/etc/nginx/sites-available/default
-sudo bash -c "sed '/servername localhost/location /redirect_me{\nreturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}\n' $file"
+phrase="location /redirect_me {\nreturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n}\n"
+sudo sed -i "30i $phrase" $file
+sudo service nginx restart
