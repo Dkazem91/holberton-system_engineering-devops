@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#installs nginx and redirects to holberton school string
+file=/usr/share/nginx/html/index.html
+apt-get update
+apt-get install nginx
+sudo bash -c "echo 'Holberton School ftw!' > $file"
