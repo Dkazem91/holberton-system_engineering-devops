@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+ssh-keygen -b 4096 -N "betty" -f ./holberton
