@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+#first debugging project
+sudo service apache2 start
