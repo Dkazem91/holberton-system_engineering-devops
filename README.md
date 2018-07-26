@@ -33,7 +33,6 @@ and more!
 
 
 ## Projects
-[command_line_for_the_win](./command_line_for_the_win)
 
 1. [0x00-shell_basics](./0x00-shell_basics)
 2. [0x01-shell_permissions](./0x01-shell_permissions)
