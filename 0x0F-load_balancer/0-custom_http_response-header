@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+sudo apt-get install nginx
+file="/etc/nginx/sites-available/default"
+sudo sed -i "21i add_header X-Served-By $HOSTNAME;" $file
+sudo service nginx restart
