@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 #sets up load balancers
-sudo add-apt-repository -y ppa:vbernat/haproxy-1.5
-sudo apt-get -y update
-sudo apt-get install haproxy
+sudo apt install -y haproxy=1.5\*
 file=/etc/haproxy/haproxy.cfg
 sudo echo -e "frontend haproxynode
 \tbind *:80
@@ -13,6 +11,6 @@ sudo echo -e "backend nodes
 \tbalance roundrobin
 \toption forwardfor
 \thttp-request set-header X-Forwarded-Port %[dst_port]
-\tserver gc-274-web-01-1531724772 35.231.71.122:80 check
-\tserver gc-274-web-02-1532675219 35.196.73.169:80 check" | sudo tee -a $file
+\tserver 274-web-01 35.231.71.122:80 check
+\tserver 274-web-02 35.196.73.169:80 check" | sudo tee -a $file
 sudo service haproxy restart
