@@ -4,11 +4,11 @@ sudo add-apt-repository -y ppa:vbernat/haproxy-1.5
 sudo apt-get -y update
 sudo apt-get install haproxy
 file=/etc/haproxy/haproxy.cfg
-sudo echo "frontend haproxynode
+sudo echo -e "frontend haproxynode
 \tbind *:80
 \tmode http
 \tdefault_backend nodes" | sudo tee -a $file
-sudo echo "backend nodes
+sudo echo -e "backend nodes
 \tmode http
 \tbalance roundrobin
 \toption forwardfor
