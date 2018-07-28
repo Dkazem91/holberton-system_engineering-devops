@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#comment
 pkill nginx
 sed -i 's/8080 default_server/80 default_server/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
