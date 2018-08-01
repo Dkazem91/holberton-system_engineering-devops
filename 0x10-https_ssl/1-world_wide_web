@@ -10,8 +10,8 @@ then
 fi
 for i in "${sites[@]}"
 do
-    first="$(dig $i.$1 | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $1}'|cut -d '.' -f1)"
-    second="$(dig $i.$1 | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $4}')"
-    third="$(dig $i.$1 | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $5}')"
+    first="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $1}'|cut -d '.' -f1)"
+    second="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $4}')"
+    third="$(dig $i."$1" | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $5}')"
     echo "The subdomain $first is a $second Record and points to $third"
 done
