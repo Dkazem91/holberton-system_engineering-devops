@@ -1,10 +1,17 @@
 #!/usr/bin/env bash
 # website
+if [ $# -eq 0 ]; then
+    exit 1
+fi
 sites=("www" "lb-01" "web-01" "web-02")
+if [ "$2" ]
+then
+    sites=("$2")
+fi
 for i in "${sites[@]}"
 do
-    first="$(dig $i.danielk.space | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $1}'|cut -d '.' -f1)"
-    second="$(dig $i.danielk.space | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $4}')"
-    third="$(dig $i.danielk.space | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $5}')"
+    first="$(dig $i.$1 | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $1}'|cut -d '.' -f1)"
+    second="$(dig $i.$1 | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $4}')"
+    third="$(dig $i.$1 | grep -A1 'ANSWER SECTION:'| tail -1 | awk '{print $5}')"
     echo "The subdomain $first is a $second Record and points to $third"
 done
