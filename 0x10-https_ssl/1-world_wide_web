@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # website
 if [ $# -eq 0 ]; then
-    exit 1
+    exit
 fi
 sites=("www" "lb-01" "web-01" "web-02")
 if [ "$2" ]
