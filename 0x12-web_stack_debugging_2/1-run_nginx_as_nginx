@@ -1,9 +1,8 @@
 #!/usr/bin/env bash
 # web debugging
-file=/etc/nginx/nginx.conf
-file2=/etc/nginx/sites-enabled/default
 sudo chmod 0644 "$file"
 pkill apache2
-sudo sed -i "s/#user www-data;/user nginx;/" "$file"
-sudo sed -i "s/80 default_server/8080 default_server" "$file2"
+sudo sed -i "s/#user www-data;/user nginx;/" /etc/nginx/nginx.conf
+sudo sed -i "s/80 default_server/8080 default_server" /etc/nginx/sites-enabled/default
+sudo -u nginx
 sudo service nginx restart
