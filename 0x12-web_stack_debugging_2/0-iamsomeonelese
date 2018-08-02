@@ -2,6 +2,5 @@
 # who ami
 if [ "$1" ]
     then
-    sudo useradd "$1" > /dev/null 2>&1
     sudo -u "$1" whoami
 fi
