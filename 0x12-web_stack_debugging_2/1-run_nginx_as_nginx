@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # web debugging
-file=0644 /etc/nginx/nginx.conf
+file=/etc/nginx/nginx.conf
 sudo chmod 0644 "$file"
 sudo sed -i "s/#user data-wwww/user nginx/" "$file"
