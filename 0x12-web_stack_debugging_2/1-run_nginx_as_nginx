@@ -2,5 +2,6 @@
 # web debugging
 file=/etc/nginx/nginx.conf
 sudo chmod 0644 "$file"
-sudo sed -i "s/#user data-wwww/user nginx/" "$file"
+sudo sed -i "s/#user www-data;/user nginx;/" "$file"
+less "$file"
 sudo service nginx restart
