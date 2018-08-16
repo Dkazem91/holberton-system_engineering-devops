@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# comment
 format=$(date +"%d-%m-%y")
-mysqldump --user=root --password="$1" --all-databases > backup.sql
+mysqldump --user=root --password="$1" --all-databases --result-file=backup.sql
 tar -czf "$format".tar.gz backup.sql
