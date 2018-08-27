@@ -13,4 +13,4 @@ if __name__ == "__main__" and argv[1].isdigit():
                  if dic.get('completed')}
     print("Employee {} is done with tasks({}/{}):".format
           (name, len(tasksDone), len(tasks)))
-    print(''.join(tasksDone))
+    print(''.join(tasksDone), end='')
