@@ -19,4 +19,4 @@ def jsonWrite(user):
 
 
 if __name__ == "__main__":
-    jsonWrite(argv[1])
+    jsonWrite(int(argv[1]))
