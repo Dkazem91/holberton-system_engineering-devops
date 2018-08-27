@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 # csv exported
-from sys import argv
-from requests import get
 import json
+from requests import get
+from sys import argv
+
 
 def jsonWrite(user):
     """writes to csv"""
