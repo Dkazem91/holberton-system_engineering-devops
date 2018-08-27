@@ -4,7 +4,7 @@ import requests
 from sys import argv
 
 
-if __name__ == "__main__":
+if __name__ == "__main__" and argv[1].isdigit():
     tasks = requests.get('https://jsonplaceholder.typicode.com/users/'
                          + argv[1] + '/todos').json()
     name = requests.get('https://jsonplaceholder.typicode.com/users/'
