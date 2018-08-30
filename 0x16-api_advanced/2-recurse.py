@@ -4,28 +4,20 @@ from requests import get
 from sys import argv
 
 
-def paginate(after, hot):
-    head = {'User-Agent': 'Dan Kazam'}
-    count = get('https://www.reddit.com/r/{}/hot.json?after={}'.format(
-        argv[1], after), headers=head).json().get('data')
-    hot += [dic.get('data').get('title') for dic in count.get('children')]
-    if not after:
-        return hot
-    return paginate(count.get('after'), hot)
-
-
-def recurse(subreddit, hotlist=[]):
+def recurse(subreddit, hotlist=[], after=None):
     """subs"""
-    try:
-        head = {'User-Agent': 'Dan Kazam'}
+    head = {'User-Agent': 'Dan Kazam'}
+    if after:
+        count = get('https://www.reddit.com/r/{}/hot.json?after={}'.format(
+            subreddit, after), headers=head).json().get('data')
+    else:
         count = get('https://www.reddit.com/r/{}/hot.json'.format(
             subreddit), headers=head).json().get('data')
-        hotlist += [dic.get('data').get('title')
-                    for dic in count.get('children')]
-        return paginate(count.get('after'), hotlist)
-    except:
-        return None
+    hotlist += [dic.get('data').get('title') for dic in count.get('children')]
+    if count.get('after'):
+        return recurse(subreddit, hotlist, after=count.get('after'))
+    return hotlist
 
 
 if __name__ == "__main__":
-    print(recurse(argv[1]))
+    recurse(argv[1])
