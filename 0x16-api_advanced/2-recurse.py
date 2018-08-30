@@ -5,12 +5,12 @@ from sys import argv
 
 
 def paginate(after, hot):
-    if not after:
-        return hot
     head = {'User-Agent': 'Dan Kazam'}
     count = get('https://www.reddit.com/r/{}/hot.json?after={}'.format(
         argv[1], after), headers=head).json().get('data')
     hot += [dic.get('data').get('title') for dic in count.get('children')]
+    if not after:
+        return hot
     return paginate(count.get('after'), hot)
 
 
