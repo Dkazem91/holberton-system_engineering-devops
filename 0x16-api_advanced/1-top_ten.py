@@ -7,11 +7,14 @@ from sys import argv
 def top_ten(subreddit):
     """subs"""
     head = {'User-Agent': 'Dan Kazam'}
-    count = get('https://www.reddit.com/r/{}/hot.json?count=10'.format(
-        subreddit), headers=head).json().get('data').get('children')
-    return [dic.get('data').get('title')
-            for dic in count][:10] or ["None"]
+    try:
+        count = get('https://www.reddit.com/r/{}/hot.json?count=10'.format(
+            subreddit), headers=head).json().get('data').get('children')
+        print('\n'.join([dic.get('data').get('title')
+                         for dic in count][:10]))
+    except:
+        print('None')
 
 
 if __name__ == "__main__":
-    print('\n'.join(top_ten(argv[1])))
+    top_ten(argv[1])
