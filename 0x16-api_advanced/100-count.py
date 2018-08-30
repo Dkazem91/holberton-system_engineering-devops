@@ -14,8 +14,8 @@ def count_all(hotlist, word_list):
         for word in words:
             if count_dic.get(word) is not None:
                 count_dic[word] += 1
-    for key in sorted(count_dic.keys()):
-        if count_dic[key]:
+    for key in sorted(count_dic, key=count_dic.get, reverse=True):
+        if count_dic.get(key):
             print("{}: {}".format(key, count_dic[key]))
 
 
