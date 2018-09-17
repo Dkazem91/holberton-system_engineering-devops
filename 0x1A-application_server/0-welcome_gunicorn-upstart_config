@@ -1,0 +1,8 @@
+description "Gunicorn application server running startHello"
+
+start on runlevel [2345]
+stop on runlevel [!2345]
+respawn
+
+chdir /home/ubuntu/AirBnB_clone_v2/web_flask
+exec gunicorn --bind 0.0.0.0:5000 0-hello_route:app
