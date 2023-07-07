@@ -1,2 +1,2 @@
 #!/bin/bash
-chmod -R a+X ./
+find . -type f -o -type d -exec chmod a+X {} +
